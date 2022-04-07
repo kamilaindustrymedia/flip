@@ -240,7 +240,7 @@ if (!Object.keys) {
 
 /*
  * @pqina/flip v1.8.0 - A Beautifully Animated Flip Clock
- * Copyright (c) 2020 PQINA - https://pqina.nl/flip/
+ * Copyright (c) 2022 PQINA - https://pqina.nl/flip/
  */
 (function(root, undefined) {
 	'use strict';
@@ -4151,14 +4151,14 @@ var setTimer = function setTimer(cb) {
 		// listen for changes in visibility
 		startListeningForVisibilityChanges();
 
+		// the moment the timeout should end
+		tickExpectedTime = now$2() + interval;
+
 		// stop here if document is hidden at start time
 		if (isDocumentHidden()) {
 			didHideDocument();
 			return;
 		}
-
-		// the moment the timeout should end
-		tickExpectedTime = now$2() + interval;
 
 		// start ticking
 		timer = setTimeout(function () {
